@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ベトナムの生活</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+  
+    <section class="home">
+      <div class="menu-btn"></div>
+      <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>わたしはVUと申します。。。</h1>
+        <p>私は日本に2年以住んでいますが、日本の生活を紹介したいと思います。</p>
+        
+      </div>
+      <div class="content">
+        <h1>日本とは。。。</h1>
+        <p>日本は近代先進国のひとつと言えます。ここに住み、勉強することは、留学生が最も近代的で近代的な生活環境にアクセスするための好ましい条件を作り出します。
+          施設は近代的で、人々に奉仕するためのユーティリティワークがたくさんあり、すべてがとてもきれいであるなど、この国に来るときは留学生から高く評価されています。</p>
+        
+      </div>
+      <div class="content">
+        <h1>日本はいい生活。。。</h1>
+        <p>日本は近代先進国のひとつと言えます。ここに住み、勉強することは、留学生が最も近代的で近代的な生活環境にアクセスするための好ましい条件を作り出します。
+          施設は近代的で、人々に奉仕するためのユーティリティワークがたくさんあり、すべてがとてもきれいであるなど、この国に来るときは留学生から高く評価されています。</p>
+        
+      </div>
+      <div class="content">
+        <h1>文明化された生活環境</h1>
+        <p>ほとんどの日本人はとても文明的で友好的です。あなたはここに住み、勉強する過程で日本人から熱心な助けを受けるでしょう。
+          道に迷ったり、自分に最適な電車の路線を見つけたい場合は、周りの人に最も専用の道を教えてくれるように頼むことを恐れないでください。
+          文明化された生活環境で生活し、交流する友好的な人々は、この国に住んでいる間、あなたがより良い人になり、自立と多くの良い資質を実践するのを助けます。</p>
+        
+      </div>
+      <div class="content">
+        <h1>日本の生活のプレッシャー。。。</h1>
+        <p>しかし、留学生は日本での生活や勉強の過程で多くのプレッシャーに直面しています。日本では言語の壁について言及するのが最も困難です。
+          言語に不慣れな方にとっては、これが最大の障害となります。日本に住んでいる間は、すべての情報がすべて日本語で交換されるため、コミュニケーションの過程で交換される内容を理解していなければ困難です。
+          そのため、留学生は、日本語が堪能でないというプレッシャーを抑えながら、ここでの生活にうまく適応できるように、常に日本語を上達させることが求められています。</p>
+        
+      </div>
+      
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+    //javascriptでレスポンシブナビゲーションメニュー用
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    //JavaScriptでビデオスライダーナビゲーション用
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+  </body>
+</html>
+      
